@@ -461,7 +461,7 @@ QRectF GraphvizLayouterBackend::Private::labelRectForEdge(Agedge_t* edge) const
 
     // note that the position attributes in graphviz point to the *center* of this element.
     // we need to subtract half of the width/height to get the top-left position
-#if GRAPHVIZ_MAJOR_VERSION >= 2 && GRAPHVIZ_MINOR_VERSION > 20
+#if (GRAPHVIZ_MAJOR_VERSION >= 2 && GRAPHVIZ_MINOR_VERSION > 20) || GRAPHVIZ_MAJOR_VERSION >= 3
     const double posx = ED_label(edge)->pos.x;
     const double posy = ED_label(edge)->pos.y;
 #else
